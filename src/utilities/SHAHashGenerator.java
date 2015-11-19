@@ -1,4 +1,4 @@
-package nl.cwi.utilities;
+package utilities;
 
 import java.nio.charset.Charset;
 import java.security.MessageDigest;

@@ -1,4 +1,4 @@
-package nl.cwi.service.text;
+package service.text;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -12,7 +12,7 @@ import com.textrazor.annotations.AnalyzedText;
 import com.textrazor.annotations.Entity;
 import com.textrazor.annotations.Topic;
 
-import nl.cwi.domain.TextRazorDataModel;
+import domain.TextRazorDataModel;
 
 public class TextAnalyzer {
 

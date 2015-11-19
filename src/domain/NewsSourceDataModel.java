@@ -1,4 +1,4 @@
-package nl.cwi.domain;
+package domain;
 
 import java.util.List;
 

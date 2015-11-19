@@ -1,4 +1,4 @@
-package nl.cwi.service.scraper;
+package service.scraper;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -24,11 +24,11 @@ import com.gargoylesoftware.htmlunit.html.HtmlSpan;
 import com.gargoylesoftware.htmlunit.html.HtmlUnknownElement;
 import com.google.gson.stream.JsonWriter;
 
-import nl.cwi.domain.ArticleDataModel;
-import nl.cwi.domain.JSONProperties;
-import nl.cwi.domain.NewsSourceDataModel;
-import nl.cwi.service.text.TextAnalyzer;
-import nl.cwi.utilities.SHAHashGenerator;
+import domain.ArticleDataModel;
+import domain.JSONProperties;
+import domain.NewsSourceDataModel;
+import service.text.TextAnalyzer;
+import utilities.SHAHashGenerator;
 
 public class NewsArticleScraper {
 

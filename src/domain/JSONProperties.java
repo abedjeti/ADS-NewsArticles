@@ -1,4 +1,4 @@
-package nl.cwi.domain;
+package domain;
 
 public class JSONProperties {
 	public static final String CONTEXT = "@context";

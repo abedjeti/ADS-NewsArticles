@@ -1,9 +1,9 @@
-package nl.cwi.domain.news.sources;
+package domain.news.sources;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import nl.cwi.domain.NewsSourceDataModel;
+import domain.NewsSourceDataModel;
 
 public class NewYorkTimesDataModel extends NewsSourceDataModel {
 

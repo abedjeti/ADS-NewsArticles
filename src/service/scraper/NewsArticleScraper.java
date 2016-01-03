@@ -30,6 +30,12 @@ import domain.NewsSourceDataModel;
 import service.text.TextAnalyzer;
 import utilities.SHAHashGenerator;
 
+/**
+ * The NewsArticleScraper is the entry point to the extraction process which defines
+ * methods to support the extraction of multiple article metadata. It makes of of GSON 
+ * (https://google-gson.googlecode.com) for the generation of JSON and HtmlUnit 
+ * (http://htmlunit.sourceforge.net/) for extraction of data in HTML pages based on XPaths
+ */
 public class NewsArticleScraper {
 
 	/**
@@ -217,6 +223,14 @@ public class NewsArticleScraper {
 		}
 	}
 
+	/**
+	 * Extracts the title from an article page based on the tag defined in the news 
+	 * source and saves it in the article data
+	 * 
+	 * @param page the article page the title of which needs to be extracted
+	 * @param newsSource the news publisher
+	 * @param articleData the article data where the extracted title will be stored
+	 */
 	public void extractTitle(HtmlPage page, NewsSourceDataModel newsSource, ArticleDataModel articleData) {
 		List<?> title = page.getByXPath(newsSource.getTitleTag());
 		if (title != null && title.size() >= 1) {
@@ -225,6 +239,14 @@ public class NewsArticleScraper {
 		}
 	}
 
+	/**
+	 * Extracts the article text from an article page based on the tag defined in the news 
+	 * source and saves it in the article data
+	 * 
+	 * @param page the article page the title of which needs to be extracted
+	 * @param newsSource the news publisher
+	 * @param articleData the article data where the extracted title will be stored
+	 */
 	public void extractText(HtmlPage page, NewsSourceDataModel newsSource, ArticleDataModel articleData) {
 		// It can happen that the text is dispersed into
 		// several section of similar properties, then combine
@@ -241,6 +263,14 @@ public class NewsArticleScraper {
 
 	}
 
+	/**
+	 * Extracts the image url from an article page based on the tag defined in the news 
+	 * source and saves it in the article data
+	 * 
+	 * @param page the article page the title of which needs to be extracted
+	 * @param newsSource the news publisher
+	 * @param articleData the article data where the extracted title will be stored
+	 */
 	public void extractImage(HtmlPage page, NewsSourceDataModel newsSource, ArticleDataModel articleData) {
 		// image url
 		List<?> imageTag = page.getByXPath(newsSource.getImageTag());
@@ -249,7 +279,15 @@ public class NewsArticleScraper {
 			articleData.setImage(image.getSrcAttribute());
 		}
 	}
-
+	
+	/**
+	 * Extracts the caption next to the image from an article page based on the tag defined in the news 
+	 * source and saves it in the article data
+	 * 
+	 * @param page the article page the title of which needs to be extracted
+	 * @param newsSource the news publisher
+	 * @param articleData the article data where the extracted title will be stored
+	 */
 	public void extractCaption(HtmlPage page, NewsSourceDataModel newsSource, ArticleDataModel articleData) {
 		List<?> captionTag = page.getByXPath(newsSource.getCaptionTag());
 		if (captionTag != null && captionTag.size() >= 1) {
@@ -259,6 +297,14 @@ public class NewsArticleScraper {
 
 	}
 
+	/**
+	 * Extracts the article publication date from an article page based on the tag defined in the news 
+	 * source and saves it in the article data
+	 * 
+	 * @param page the article page the title of which needs to be extracted
+	 * @param newsSource the news publisher
+	 * @param articleData the article data where the extracted title will be stored
+	 */
 	public void extractPublicationDate(HtmlPage page, NewsSourceDataModel newsSource, ArticleDataModel articleData) {
 		if (articleData.getPublicationDate() == null && newsSource.getPublicationDateTag() != null) {
 			List<?> dateTag = page.getByXPath(newsSource.getPublicationDateTag());

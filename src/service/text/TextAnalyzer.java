@@ -14,6 +14,14 @@ import com.textrazor.annotations.Topic;
 
 import domain.TextRazorDataModel;
 
+/**
+ * This class uses TextRazor API (http://www.textrazor.com) to analyze article texts
+ * and extract topics, coarse topics and entities. Make sure you install the TextRazor 
+ * Java SDK and get an API. Beware that you might have a request limit based on your 
+ * API key.
+ * 
+ *@see TextRazorDataModel
+ */
 public class TextAnalyzer {
 
 	/**
@@ -47,6 +55,12 @@ public class TextAnalyzer {
 		razor.setDoEncryption(true);
 	}
 
+	/**
+	 * Analyses a piece of text as string with TextRazor
+	 * 
+	 * @param text the article text to be analyzed
+	 * @return the extracted data stored in TextRazorDataModel
+	 */
 	public TextRazorDataModel analyzeText(String text) {
 		try {
 			if (text != null && !text.isEmpty()) {
@@ -61,6 +75,13 @@ public class TextAnalyzer {
 		return null;
 	}
 
+	/**
+	 * Extracts topics and entities from an AnalyzedText object which is typically
+	 * returned from TextRazor anlysis methods, and stores them in a TextRazorDataModel
+	 * 
+	 * @param analyzedText the AnalyzedText object contained the analyzed data returned from TextRazor
+	 * @return the extracted data stored in TextRazorDataModel
+	 */
 	private TextRazorDataModel extractTextRazorData(AnalyzedText analyzedText) {
 
 		Set<String> coarseTopics = new HashSet<String>();

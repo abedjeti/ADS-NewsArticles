@@ -2,6 +2,13 @@ package domain;
 
 import java.util.List;
 
+/**
+ * The NewsSourceDataModel defined the data specific to each news publisher such 
+ * as name, id as well as the XPath to the to-be-extracted attributes. This class 
+ * is meant to be either be extended for each news publisher like it is done in
+ * domain.news.sources or be instantiated whereby all the attributes can be set 
+ * with the setter methods. 
+ */
 public class NewsSourceDataModel {
 
 	private String name;

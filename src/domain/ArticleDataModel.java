@@ -1,10 +1,11 @@
 package domain;
 
+/**
+ * The ArticleDataModel class contains the metadata that can be 
+ * extracted from an article page.
+ */
 public class ArticleDataModel {
-
-	/*
-	 * data extracted from an article
-	 */
+	
 	private String title;
 
 	private String image;

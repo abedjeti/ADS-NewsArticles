@@ -5,6 +5,13 @@ import java.util.Arrays;
 
 import domain.NewsSourceDataModel;
 
+/**
+ * The WashingtonPostDataModel serves as a container for the Washington Post 
+ * news publisher and contains the XPaths to the data that needs to be 
+ * extracted from the article page. Some URLs can be defined to be excluded,
+ * whereas strings can be defined the existence of which needs to be verified
+ * in the article URL.
+ */
 public class WashingtonPostDataModel extends NewsSourceDataModel {
 
 	public WashingtonPostDataModel() {

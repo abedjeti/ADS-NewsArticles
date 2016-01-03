@@ -27,7 +27,18 @@ import com.google.gson.stream.JsonToken;
 
 import domain.JSONProperties;
 import domain.NewsSourceDataModel;
+import service.scraper.NewsArticleScraper;
 
+/**
+ * The FileManager reads a JSON-LD file and locally stores the article text and article
+ * image in .txt and .jpeg format respectively. The format of the JSON-LD file should be
+ * according to the attributes specified in JSONProperties. The JSON-LD file should be 
+ * previously generated with NewsArticleScraper.extractArticleFromFile(). The purpose of
+ * this class is to facilitate the storage of the text and images for further analysis. 
+ *
+ *@see JSONProperties
+ *@see NewsArticleScraper
+ */
 public class FileManager {
 
 	/**
@@ -204,6 +215,12 @@ public class FileManager {
 		return input;
 	}
 
+	/**
+	 * Saves the text input in a local file
+	 * 
+	 * @param filePath the file path which needs to be created and written to
+	 * @param text the string to be written in the file
+	 */
 	public static void saveTextInFile(String filePath, String text) {
 		try {
 			File textFile = new File(filePath);
@@ -218,6 +235,12 @@ public class FileManager {
 
 	}
 
+	/**
+	 * Saves an image defined as InputStream to a local file
+	 * 
+	 * @param filePath the file path which needs to be created and written to
+	 * @param is the image represented as an InputStream
+	 */
 	private static void saveImageFile(String filePath, InputStream is) {
 		try {
 			File img = new File(filePath);

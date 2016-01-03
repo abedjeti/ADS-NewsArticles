@@ -1,5 +1,8 @@
 package domain;
 
+/**
+ * This class contains vocabulary needed for the generation of the JSON-LD file
+ */
 public class JSONProperties {
 	public static final String CONTEXT = "@context";
 	public static final String VOCAB = "@vocab";

@@ -5,6 +5,11 @@ import java.util.Arrays;
 
 import domain.NewsSourceDataModel;
 
+/**
+ * The NewYorkTimesDataModel serves as a container for the New York Times 
+ * news publisher and contains the XPaths to the data that needs to be 
+ * extracted from the article page. Some URLs can be defined to be excluded. 
+ */
 public class NewYorkTimesDataModel extends NewsSourceDataModel {
 
 	public NewYorkTimesDataModel() {

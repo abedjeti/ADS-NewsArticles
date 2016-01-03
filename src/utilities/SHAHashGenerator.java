@@ -8,6 +8,13 @@ import org.apache.commons.codec.binary.Hex;
 
 public class SHAHashGenerator {
 
+	/**
+	 * Generates a hash code to be served as an ID for articles in the JSON-LD file as well as 
+	 * both the text and image files
+	 * 
+	 * @param input
+	 * @return
+	 */
 	public static String generateHashCode(String input) {
 		MessageDigest md;
 		try {

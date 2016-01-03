@@ -2,6 +2,9 @@ package domain;
 
 import java.util.Set;
 
+/**
+ * The TextRazorDataModel contains the topics and entities extracted from TextRazor.
+ */
 public class TextRazorDataModel {
 
 	private Set<String> coarseTopics;

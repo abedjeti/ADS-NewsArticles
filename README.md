@@ -6,7 +6,9 @@ which takes as input a .csv file containing a URL per line together with the pub
 date separated by a space. A local output file path should be given as an argument in the
 .jsonld format. 
 
-An example of how NewsArticleScraper can be be called is given in the class AppExample.java.
+An example of how NewsArticleScraper can be be called is given in the class 
+DatasetGenerationExample.java, whereas the FileManager usage is demonstrated in 
+ArticleDataManagementExample.java.
 
 The settings for the news publisher can be set though the NewsSourceDataModel by extending 
 or initializing it. Two examples have been given in domain.news.sources. They contain the 

@@ -115,10 +115,14 @@ public class NewsArticleScraper {
 					}
 
 					if (newsSource.getMusthaveUrls() != null) {
+						boolean validURL = true;
 						for (String muthave : newsSource.getMusthaveUrls()) {
 							if (!lineURL.contains(muthave))
-								continue;
+								validURL = false;
+							break;
 						}
+						if (!validURL)
+							continue;
 					}
 
 					try {
@@ -168,6 +172,15 @@ public class NewsArticleScraper {
 							if (articleData.getTextRazorData() != null) {
 								Set<String> coarseTopics = (HashSet<String>) articleData.getTextRazorData().getCoarseTopics();
 								Set<String> topics = (HashSet<String>) articleData.getTextRazorData().getTopics();
+
+								if (topics != null && !topics.isEmpty()) {
+									for (String topic : topics) {
+										if (topic.contains("Category:")) {
+											coarseTopics.add(topic);
+											topics.remove(topic);
+										}
+									}
+								}
 
 								if (coarseTopics != null && !coarseTopics.isEmpty()) {
 									writer.name(JSONProperties.COARSE_TOPICS);

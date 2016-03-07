@@ -3,8 +3,8 @@
 
 The generation of the dataset should be carried out through the NewsArticleScraper class
 which takes as input a .csv file containing a URL per line together with the publishing 
-date separated by a space. A local output file path should be given as an argument in the
-.jsonld format. 
+date separated by a space. The files used can be located in the /data directory. A local 
+output file path should be given as an argument in the .jsonld format. 
 
 An example of how NewsArticleScraper can be be called is given in the class 
 DatasetGenerationExample.java, whereas the FileManager usage is demonstrated in 
